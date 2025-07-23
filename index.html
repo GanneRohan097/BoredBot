@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bored?</title>
+</head>
+<style>
+    body{
+        background-color: rgb(39, 36, 80);
+        align-items: center;
+        text-align: center;
+    }
+    .main{
+        background-color: rgb(111, 247, 231);
+        margin: 19%;
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+    }
+    img{
+        width: 10%;
+        
+    }
+    h2{
+        font-family: sans-serif;
+        background-color: rgb(235, 175, 97);
+         margin-left: 6%;
+         margin-right: 6%;
+         border-radius: 10px;
+        
+    }
+    h1{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    }
+    .main2{
+        display: ;
+    }
+button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(221, 86, 86); /* solid inner color */
+    cursor: pointer;
+    border: none;
+    position: relative;
+    z-index: 1;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    background: conic-gradient(
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        violet,
+        red
+    );
+    z-index: -1;
+    animation: spin 2s linear infinite;
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(221, 86, 86); /* same as button bg */
+    border-radius: 50%;
+    z-index: 2;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+</style>
+<body>
+    <div class="main">
+        <div class="main2">
+        <img src="robot.png">
+        <h1 class="head">Are you bored? Just click me</h1>
+        </div>
+        <h2 id="bored"></h2>
+        <button onclick="bored()"></button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
